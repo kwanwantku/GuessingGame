@@ -20,8 +20,7 @@ public class GameConsole {
 		System.out.println(title);
 		System.out.print(prompt+" ");
 		Scanner scan = new Scanner(System.in);
-		int number = 0;
-		number = scan.nextInt();
+		int number = scan.nextInt();
 		while(!game.guess(number)){
 			game.getHint();
 			System.out.println(game.getHint());
