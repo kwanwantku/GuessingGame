@@ -81,7 +81,7 @@ public class GuessingGame {
 	}
 	
 	/**
-	 * Counting the number input in the game before they found the secret number.
+	 * Counting the number input for guessing the number in one round of game.
 	 * @return a count number that counted the number input in the game.
 	 * 
 	 */
