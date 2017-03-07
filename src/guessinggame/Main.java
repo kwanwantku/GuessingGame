@@ -1,4 +1,4 @@
-package GuessingGameWithObjects;
+package guessinggame;
 
 /**
  * The main runs the Game and Game console objects.

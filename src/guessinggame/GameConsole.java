@@ -1,4 +1,4 @@
-package GuessingGameWithObjects;
+package guessinggame;
 import java.util.Scanner;
 
 
@@ -15,14 +15,14 @@ public class GameConsole {
 	* @return the guessed secret from the game.(the solution of game)
 	*/
 	public int play(GuessingGame game){
-		String title = "Guessing Game";
+		String title = "Guessing Game from \n"+game.getHint();
 		String prompt = "Your guess?";
 		System.out.println(title);
 		System.out.print(prompt+" ");
 		Scanner scan = new Scanner(System.in);
-		int number = scan.nextInt();
-		while(game.guess(number)){
-            game.getCount();
+		int number = 0;
+		number = scan.nextInt();
+		while(!game.guess(number)){
 			game.getHint();
 			System.out.println(game.getHint());
 			System.out.print(prompt+" ");
@@ -30,7 +30,7 @@ public class GameConsole {
 		}
 		System.out.println(game.getHint()+number+".");
 		System.out.println("Correct.  You used "+game.getCount()+" guesses.");
-		return 0;
+		return number;
 	}
 	
 }

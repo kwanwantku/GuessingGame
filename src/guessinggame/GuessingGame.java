@@ -1,4 +1,5 @@
-package GuessingGameWithObjects;
+
+package guessinggame;
 
 import java.util.Random;
 
@@ -13,7 +14,7 @@ public class GuessingGame {
 	private int upperBound;
 	private int secret;
 	private String hint;
-	private int number;
+	private int count;
 	
 	/**             
 	 * Initialize a new game.
@@ -33,17 +34,20 @@ public class GuessingGame {
 	public boolean guess(int number){
 		if(number == secret){
 			setHint("Correct. The secret is ");
-			return false;
+			this.count++;
+			return true;
 		}
 		
 		else if(number > secret){
 			setHint("Sorry,your guess is too large.");
-			return true;
+			this.count++;
+			return false;
 		}
 		
 		else {
 			setHint("Sorry,your guess is too small.");
-			return true;
+			this.count++;
+			return false;
 		}
 	}
 	
@@ -82,7 +86,7 @@ public class GuessingGame {
 	 * 
 	 */
 	public int getCount(){
-		++number;
-		return number;	
+		return this.count;
 	}
+
 }
